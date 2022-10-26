@@ -9,6 +9,13 @@ pipeline {
         }
     }
 
+    stage('build') {
+        steps {
+            sh "pip3 install -r requirements.txt"
+            sh "tox"
+        }
+    }
+
     stage('archive artifact') {
             steps {
                 archiveArtifacts artifacts: '.tox/distwebcount-01.zip'
