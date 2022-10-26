@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'python' }
     stages {
-        stage('git') {
+        stage('git clone') {
             steps {
                 git url: 'https://github.com/tejachennuru1/python-webcount.git',
                     branch : 'master'
@@ -11,8 +11,8 @@ pipeline {
 
     stage('build') {
         steps {
-            sh "pip3 install -r requirements.txt"
-            sh "tox"
+            sh 'pip3 install -r requirements.txt'
+            sh 'tox'
         }
     }
 
