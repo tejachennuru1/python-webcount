@@ -9,30 +9,29 @@ pipeline {
         }
     }
 
-stages {
+    stages {
         stage('git') {
             steps {
                 branch : 'master'
                 git url: 'https://github.com/tejachennuru1/python-webcount.git'
             }
         }
-}
+    }
 
-stages {
+    stages {
         stage('archive artifact') {
             steps {
-               archiveArtifacts artifacts: '.tox/distwebcount-01.zip'
+                archiveArtifacts artifacts: '.tox/distwebcount-01.zip'
+            }
+        }
+    }
 
-stages {
+    stages {
         stage('junit publish') {
             steps {
-               junit "**/*.xml"
-
+                junit '**/*.xml'
             }
         }
+    }
 
-}
-            }
-
-        }
 }
