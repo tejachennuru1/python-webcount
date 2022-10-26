@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'python' }
-    stages {
+    stages 
         stage('git clone') {
             steps {
                 git url: 'https://github.com/tejachennuru1/python-webcount.git',
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: '.tox/dist/webcount-0.1.zip'
             }
-        }
+        
 
         stage('junit publish') {
             steps {
@@ -25,4 +25,5 @@ pipeline {
             }
         }
     }
-}
+
+
