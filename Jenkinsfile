@@ -15,7 +15,7 @@ pipeline {
         }
         stage('archive artifact') {
             steps {
-                archiveArtifacts artifacts: '.tox/dist/webcount-0.1.zip'
+                archiveArtifacts artifacts: '/home/ubuntu/python-webcount/.tox/dist/webcount-0.1.zip'
             }
         }
 
