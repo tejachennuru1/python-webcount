@@ -15,7 +15,7 @@ pipeline {
         }
         stage('archive artifact') {
             steps {
-                archiveArtifacts artifacts: '.tox/distwebcount-01.zip'
+                archiveArtifacts artifacts: '.tox/dist/webcount-01.zip'
             }
         }
 
