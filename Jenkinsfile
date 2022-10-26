@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('git') {
             steps {
-                branch : 'master'
-                git url: 'https://github.com/tejachennuru1/python-webcount.git'
+                git url: 'https://github.com/tejachennuru1/python-webcount.git',
+                    branch : 'master'
             }
         }
     }
